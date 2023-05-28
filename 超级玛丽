@@ -1,0 +1,29 @@
+import pygame
+
+pygame.init()
+
+# 设置游戏窗口大小
+screen = pygame.display.set_mode((800, 600))
+
+# 加载超级玛丽游戏背景图片
+background = pygame.image.load("supermario_background.png")
+
+# 加载超级玛丽游戏角色图片
+mario = pygame.image.load("supermario_character.png")
+
+# 游戏主循环
+while True:
+    # 处理游戏事件
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+
+    # 显示游戏背景
+    screen.blit(background, (0, 0))
+
+    # 显示超级玛丽角色
+    screen.blit(mario, (400, 400))
+
+    # 刷新游戏窗口
+    pygame.display.update()
